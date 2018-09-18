@@ -1,0 +1,5 @@
+type: a
+attribute: 
+  class: nav-link
+  href: '#'
+innerHTML: Link

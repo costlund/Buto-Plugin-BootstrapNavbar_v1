@@ -1,0 +1,85 @@
+-
+  type: li
+  attribute:
+    class: nav-item active
+  innerHTML:
+    -
+      type: a
+      attribute: 
+        class: nav-link
+        href: '#'
+      innerHTML:  
+        -
+          type: text
+          innerHTML: Home
+        -
+          type: span
+          attribute:
+            class: sr-only
+          innerHTML: (current)
+-
+  type: li
+  attribute:
+    class: nav-item
+  innerHTML:
+    -
+      type: a
+      attribute: 
+        class: nav-link
+        href: '#'
+      innerHTML: Link
+-
+  type: li
+  attribute:
+    class: nav-item dropdown
+  innerHTML:
+    -
+      type: a
+      attribute:
+        class: nav-link dropdown-toggle
+        href: '#'
+        id: navbarDropdown
+        role: button
+        data-toggle: dropdown
+        aria-haspopup: true
+        aria-expanded: false
+      innerHTML: Dropdown
+    -
+      type: div
+      attribute:
+        class: dropdown-menu
+        aria-labelledby: navbarDropdown
+      innerHTML:
+        -
+          type: a
+          attribute:
+            class: dropdown-item
+            href: '#'
+          innerHTML: Action
+        -
+          type: a
+          attribute:
+            class: dropdown-item
+            href: '#'
+          innerHTML: Another action
+        -
+          type: div
+          attribute:
+            class: dropdown-divider
+        -
+          type: a
+          attribute:
+            class: dropdown-item
+            href: '#'
+          innerHTML: Something else here
+-
+  type: li
+  attribute:
+    class: nav-item
+  innerHTML: 
+    -
+      type: a
+      attribute:
+        class: nav-link disabled
+        href: '#'
+      innerHTML: Disabled

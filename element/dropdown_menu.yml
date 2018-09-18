@@ -1,0 +1,27 @@
+type: div
+attribute:
+  class: dropdown-menu
+  aria-labelledby: navbarDropdown
+innerHTML:
+  -
+    type: a
+    attribute:
+      class: dropdown-item
+      href: '#'
+    innerHTML: Action
+  -
+    type: a
+    attribute:
+      class: dropdown-item
+      href: '#'
+    innerHTML: Another action
+  -
+    type: div
+    attribute:
+      class: dropdown-divider
+  -
+    type: a
+    attribute:
+      class: dropdown-item
+      href: '#'
+    innerHTML: Something else here
