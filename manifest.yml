@@ -1,0 +1,26 @@
+version: '1.1'
+history:
+  '1.1':
+    date: '2018-12-10'
+    description: 'Generate id if not exist.'
+  '1.0':
+    date: '2018-12-10'
+    description: 'First version.'
+plugin:
+  -
+    name: wf/array
+    version: 1.0.1
+  -
+    name: wf/yml
+    version: '1.1'
+sys:
+  -
+    name: mercury
+    version:
+      - '1.0'
+php:
+  - '7.2'
+author: null
+links:
+  Github: 'https://github.com'
+description: ''

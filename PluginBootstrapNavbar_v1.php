@@ -47,7 +47,15 @@ class PluginBootstrapNavbar_v1{
     wfPlugin::includeonce('wf/array');
     wfPlugin::includeonce('wf/yml');
     $data = new PluginWfArray($data);
+    wfHelp::dump($data);
+    $id = null;
+    if($data->get('data/navbar/id')){
+      $id = $data->get('data/navbar/id');
+    }else{
+      $id = '_'.wfCrypt::getUid();
+    }
     $element = new PluginWfYml(__DIR__.'/element/navbar.yml');
+    $element->setByTag(array('data-target' => '#'.$id, 'id' => $id));
     if($data->get('data/brand')){
       $brand = new PluginWfArray($data->get('data/brand'));
     }else{
