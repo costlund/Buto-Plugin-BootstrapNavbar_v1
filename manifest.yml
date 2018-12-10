@@ -1,5 +1,8 @@
-version: '1.1'
+version: '1.2'
 history:
+  '1.2':
+    date: '2018-12-10'
+    description: 'Set brand href and onclick.'
   '1.1':
     date: '2018-12-10'
     description: 'Generate id if not exist.'

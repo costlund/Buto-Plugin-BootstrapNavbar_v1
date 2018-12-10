@@ -6,7 +6,8 @@ innerHTML:
     type: a
     attribute:
       class: navbar-brand
-      href: '#'
+      href: 'rs:brand_href'
+      onclick: 'rs:brand_onclick'
     innerHTML: rs:brand
   -
     type: button

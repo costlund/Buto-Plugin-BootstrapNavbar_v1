@@ -5,13 +5,21 @@ class PluginBootstrapNavbar_v1{
     wfPlugin::includeonce('wf/yml');
     $data = new PluginWfArray($data);
     $id = null;
+    $brand_href = '#';
+    $brand_onclick = null;
     if($data->get('data/navbar/id')){
       $id = $data->get('data/navbar/id');
     }else{
       $id = '_'.wfCrypt::getUid();
     }
+    if($data->get('data/brand_href')){
+      $brand_href = $data->get('data/brand_href');
+    }
+    if($data->get('data/brand_onclick')){
+      $brand_onclick = $data->get('data/brand_onclick');
+    }
     $element = new PluginWfYml(__DIR__.'/element/navbar.yml');
-    $element->setByTag(array('data-target' => '#'.$id, 'id' => $id));
+    $element->setByTag(array('data-target' => '#'.$id, 'id' => $id, 'brand_href' => $brand_href, 'brand_onclick' => $brand_onclick));
     if($data->get('data/brand')){
       $brand = new PluginWfArray($data->get('data/brand'));
     }else{
