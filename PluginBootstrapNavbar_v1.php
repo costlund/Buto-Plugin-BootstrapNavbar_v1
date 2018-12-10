@@ -1,53 +1,9 @@
 <?php
-/**
-  type: widget
-  data:
-    plugin: 'bootstrap/navbar_v1'
-    method: navbar
-    data:
-      _: 'https://getbootstrap.com/docs/4.0/components/navbar/'
-      brand: Navbar
-      navbar:
-        element_before:
-          -
-            type: span
-            attribute:
-              class: navbar-text
-            innerHTML: (text before)
-        element_after:
-          -
-            type: span
-            attribute:
-              class: navbar-text
-            innerHTML: (text after)
-        item:
-          -
-            text: Link 1
-            disabled: true
-            href: '/test'
-          -
-            type: dropdown
-            active: true
-            text: Link 2
-            item:
-              -
-                text: Link 2.1
-                href: /test2
-              -
-                type: divider
-              -
-                text: Link 2.2
-                onclick: "alert()"
-          -
-            text: Link 3
-            onclick: "alert()"
- */
 class PluginBootstrapNavbar_v1{
   public function widget_navbar($data){
     wfPlugin::includeonce('wf/array');
     wfPlugin::includeonce('wf/yml');
     $data = new PluginWfArray($data);
-    wfHelp::dump($data);
     $id = null;
     if($data->get('data/navbar/id')){
       $id = $data->get('data/navbar/id');
