@@ -32,6 +32,7 @@ class PluginBootstrapNavbar_v1{
         if(!$i->get('type')){$i->set('type', 'link');}
         if($i->get('type')=='link'){
           $link = new PluginWfYml(__DIR__.'/element/link.yml');
+          $link->set('settings', $i->get('settings'));
           $link->set('innerHTML', $i->get('text'));
           if($i->get('disabled')){
             $link->set('attribute/class', $link->get('attribute/class').' disabled');
@@ -49,6 +50,7 @@ class PluginBootstrapNavbar_v1{
           $items[] = wfDocument::createHtmlElement('li', array($link->get()), array('class' => $class));
         }elseif($i->get('type')=='dropdown'){
           $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
+          $link->set('settings', $i->get('settings'));
           $link->set('innerHTML', $i->get('text'));
           $class = 'nav-item dropdown';
           if($i->get('active')){
@@ -61,6 +63,7 @@ class PluginBootstrapNavbar_v1{
             if(!$j->get('type')){$j->set('type', 'link');}
             if($j->get('type')=='link'){
               $dropdown_link = new PluginWfYml(__DIR__.'/element/dropdown_link.yml');
+              $dropdown_link->set('settings', $j->get('settings'));
               $dropdown_link->set('innerHTML', $j->get('text'));
               if($j->get('disabled')){
                 $dropdown_link->set('attribute/class', $dropdown_link->get('attribute/class').' disabled');
@@ -74,6 +77,7 @@ class PluginBootstrapNavbar_v1{
               $dropdown_items[] = $dropdown_link->get();
             }elseif($j->get('type')=='divider'){
               $dropdown_divider = new PluginWfYml(__DIR__.'/element/dropdown_divider.yml');
+              $dropdown_divider->set('settings', $j->get('settings'));
               $dropdown_items[] = $dropdown_divider->get();
             }
           }
