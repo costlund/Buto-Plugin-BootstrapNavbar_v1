@@ -31,23 +31,7 @@ class PluginBootstrapNavbar_v1{
         $i = new PluginWfArray($value);
         if(!$i->get('type')){$i->set('type', 'link');}
         if($i->get('type')=='link'){
-          $link = new PluginWfYml(__DIR__.'/element/link.yml');
-          $link->set('settings', $i->get('settings'));
-          $link->set('innerHTML', $i->get('text'));
-          if($i->get('disabled')){
-            $link->set('attribute/class', $link->get('attribute/class').' disabled');
-          }
-          if($i->get('href')){
-            $link->set('attribute/href', $i->get('href'));
-          }
-          if($i->get('onclick')){
-            $link->set('attribute/onclick', $i->get('onclick'));
-          }
-          $class = 'nav-item';
-          if($i->get('active')){
-            $class .= ' active';
-          }
-          $items[] = wfDocument::createHtmlElement('li', array($link->get()), array('class' => $class));
+          $items[] = wfDocument::createHtmlElement('li', array($this->getLink($i, 'nav-link')->get()), array('class' => $class));
         }elseif($i->get('type')=='dropdown'){
           $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
           $link->set('settings', $i->get('settings'));
@@ -62,19 +46,7 @@ class PluginBootstrapNavbar_v1{
             $j = new PluginWfArray($value2);
             if(!$j->get('type')){$j->set('type', 'link');}
             if($j->get('type')=='link'){
-              $dropdown_link = new PluginWfYml(__DIR__.'/element/dropdown_link.yml');
-              $dropdown_link->set('settings', $j->get('settings'));
-              $dropdown_link->set('innerHTML', $j->get('text'));
-              if($j->get('disabled')){
-                $dropdown_link->set('attribute/class', $dropdown_link->get('attribute/class').' disabled');
-              }
-              if($j->get('href')){
-                $dropdown_link->set('attribute/href', $j->get('href'));
-              }
-              if($j->get('onclick')){
-                $dropdown_link->set('attribute/onclick', $j->get('onclick'));
-              }
-              $dropdown_items[] = $dropdown_link->get();
+              $dropdown_items[] = $this->getLink($j)->get();
             }elseif($j->get('type')=='divider'){
               $dropdown_divider = new PluginWfYml(__DIR__.'/element/dropdown_divider.yml');
               $dropdown_divider->set('settings', $j->get('settings'));
@@ -91,5 +63,48 @@ class PluginBootstrapNavbar_v1{
     }
     $element->setByTag(array('brand' => $brand->get(), 'item' => $item->get(), 'element_before' => $data->get('data/navbar/element_before'), 'element_after' => $data->get('data/navbar/element_after')));
     wfDocument::renderElement(array($element->get()));
+  }
+  private function getLink($data, $class = 'dropdown-item'){
+    /**
+     * Yml
+     */
+    $link = new PluginWfYml(__DIR__.'/element/link.yml');
+    /**
+     * attribute/class
+     */
+    $link->set('attribute/class', $class);
+    if($data->get('disabled')){
+      $link->set('attribute/class', $link->get('attribute/class').' disabled');
+    }
+    /**
+     * Settings
+     */
+    $link->set('settings', $data->get('settings'));
+    /**
+     * innerHTML
+     */
+    $link->set('innerHTML', $data->get('text'));
+    /**
+     * attribute/href
+     */
+    if($data->get('href')){
+      $link->set('attribute/href', $data->get('href'));
+    }
+    /**
+     * attribute/onclick
+     */
+    if($data->get('onclick')){
+      $link->set('attribute/onclick', $data->get('onclick'));
+    }
+    /**
+     * Target
+     */
+    if($data->get('target')){
+      $link->set('attribute/target', $data->get('target'));
+    }
+    /**
+     * 
+     */
+    return $link;
   }
 }
