@@ -31,7 +31,7 @@ class PluginBootstrapNavbar_v1{
         $i = new PluginWfArray($value);
         if(!$i->get('type')){$i->set('type', 'link');}
         if($i->get('type')=='link'){
-          $items[] = wfDocument::createHtmlElement('li', array($this->getLink($i, 'nav-link')->get()), array('class' => $class));
+          $items[] = wfDocument::createHtmlElement('li', array($this->getLink($i, 'nav-link')->get()));
         }elseif($i->get('type')=='dropdown'){
           $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
           $link->set('settings', $i->get('settings'));
