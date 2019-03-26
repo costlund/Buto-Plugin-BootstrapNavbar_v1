@@ -51,10 +51,18 @@ class PluginBootstrapNavbar_v1{
               $dropdown_divider = new PluginWfYml(__DIR__.'/element/dropdown_divider.yml');
               $dropdown_divider->set('settings', $j->get('settings'));
               $dropdown_items[] = $dropdown_divider->get();
+            }elseif($j->get('type')=='text'){
+              $text = new PluginWfYml(__DIR__.'/element/dropdown_text.yml');
+              $text->setByTag($j->get());
+              $dropdown_items[] = $text->get();
             }
           }
           $dropdown_menu->set('innerHTML', $dropdown_items);
           $items[] = wfDocument::createHtmlElement('li', array($link->get(), $dropdown_menu->get()), array('class' => $class));
+        }elseif($i->get('type')=='text'){
+          $text = new PluginWfYml(__DIR__.'/element/text.yml');
+          $text->setByTag($i->get());
+          $items[] = $text->get();
         }
       }
       $item = new PluginWfArray($items);

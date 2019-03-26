@@ -1,0 +1,5 @@
+type: span
+attribute: 
+  class: navbar-text disabled
+  style: rs:style
+innerHTML: rs:text

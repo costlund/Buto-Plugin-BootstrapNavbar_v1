@@ -1,0 +1,10 @@
+#type: li
+#attribute:
+#  class: nav-item
+#innerHTML:
+#  -
+type: div
+attribute: 
+  class: dropdown-item disabled
+  style: rs:style
+innerHTML: rs:text

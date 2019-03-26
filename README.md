@@ -31,6 +31,18 @@ data:
           disabled: true
           href: '/test'
         -
+          type: text
+          text: Statistic
+          style: 'font-weight:bold'
+        -
+          type: text
+          text:
+            -
+              type: span
+              attribute:
+                class: badge badge-primary
+              innerHTML: test
+        -
           type: dropdown
           active: true
           text: Link 2
@@ -40,6 +52,10 @@ data:
               href: /test2
             -
               type: divider
+            -
+              type: text
+              text: Statistic
+              style: 'font-style:italic'
             -
               text: Link 2.2
               onclick: "alert()"

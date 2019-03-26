@@ -1,5 +1,8 @@
-version: '1.4'
+version: '1.5'
 history:
+  '1.5':
+    date: '2019-03-26'
+    description: 'Add type text in navbar and dropdown.'
   '1.4':
     date: '2019-01-21'
     description: 'Add attribute/target support.'
