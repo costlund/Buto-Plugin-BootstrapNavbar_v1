@@ -39,6 +39,13 @@ innerHTML:
           class: navbar-nav mr-auto
         innerHTML: rs:item
       -
+        type: ul
+        settings:
+          enabled: true
+        attribute:
+          class: navbar-nav
+        innerHTML: rs:item_right
+      -
         type: div
         innerHTML: rs:element_after
       -

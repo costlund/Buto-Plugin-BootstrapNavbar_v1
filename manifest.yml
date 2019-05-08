@@ -1,5 +1,8 @@
-version: '1.5'
+version: '1.6'
 history:
+  '1.6':
+    date: '2019-05-08'
+    description: 'Add items right align.'
   '1.5':
     date: '2019-03-26'
     description: 'Add type text in navbar and dropdown.'
@@ -32,7 +35,6 @@ sys:
       - '1.0'
 php:
   - '7.2'
-author: null
+author: Claes Östlund
 links:
-  Github: 'https://github.com'
 description: ''

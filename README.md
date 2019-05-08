@@ -62,5 +62,9 @@ data:
         -
           text: Link 3
           onclick: "alert()"
+      item_right:
+        -
+          text: Go right
+          href: '/go_right'
 ```
 
