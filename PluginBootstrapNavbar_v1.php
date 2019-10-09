@@ -66,6 +66,19 @@ class PluginBootstrapNavbar_v1{
           $dropdown_menu = new PluginWfYml(__DIR__.'/element/dropdown_menu_right.yml');
         }
         $dropdown_items = array();
+        /**
+         * Item method.
+         */
+        if($i->get('item_method')){
+          wfPlugin::includeonce($i->get('item_method/plugin'));
+          $obj = wfSettings::getPluginObj($i->get('item_method/plugin'));
+          $method = $i->get('item_method/method');
+          $i->set('item', $obj->$method($i->get('item_method/data')));
+        }
+        /**
+         * 
+         */
+        $i->set('item', wfSettings::getSettingsFromYmlString($i->get('item')));
         foreach ($i->get('item') as $key2 => $value2) {
           $j = new PluginWfArray($value2);
           if(!$j->get('type')){$j->set('type', 'link');}
@@ -78,6 +91,7 @@ class PluginBootstrapNavbar_v1{
           }elseif($j->get('type')=='text'){
             $text = new PluginWfYml(__DIR__.'/element/dropdown_text.yml');
             $text->setByTag($j->get());
+            $text->set('settings', $j->get('settings'));
             $dropdown_items[] = $text->get();
           }
         }

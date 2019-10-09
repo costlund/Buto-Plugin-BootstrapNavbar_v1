@@ -62,6 +62,14 @@ data:
         -
           text: Link 3
           onclick: "alert()"
+        -
+          text: Item method
+          type: dropdown
+          settings:
+            enabled: true
+          item_method:
+            plugin: _my_/_plugin_
+            method: _nav_items_
       item_right:
         -
           text: Go right

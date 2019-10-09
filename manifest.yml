@@ -1,5 +1,8 @@
-version: '1.6'
+version: '1.7'
 history:
+  '1.7':
+    date: '2019-10-09'
+    description: 'Add param item_method.'
   '1.6':
     date: '2019-05-08'
     description: 'Add items right align.'
