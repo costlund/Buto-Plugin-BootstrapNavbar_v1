@@ -2,4 +2,5 @@ type: a
 attribute: 
   class: nav-link
   href: '#'
+  style: rs:style
 innerHTML: Link

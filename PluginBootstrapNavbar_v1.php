@@ -49,10 +49,22 @@ class PluginBootstrapNavbar_v1{
     $items = array();
     foreach ($data as $key => $value) {
       $i = new PluginWfArray($value);
+      /**
+       * Set type as link if empty.
+       */
       if(!$i->get('type')){$i->set('type', 'link');}
+      /**
+       * 
+       */
       if($i->get('type')=='link'){
+        /**
+         * Link
+         */
         $items[] = wfDocument::createHtmlElement('li', array($this->getLink($i, 'nav-link')->get()));
       }elseif($i->get('type')=='dropdown'){
+        /**
+         * Dropdown
+         */
         $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
         $link->set('settings', $i->get('settings'));
         $link->set('innerHTML', $i->get('text'));
@@ -98,6 +110,9 @@ class PluginBootstrapNavbar_v1{
         $dropdown_menu->set('innerHTML', $dropdown_items);
         $items[] = wfDocument::createHtmlElement('li', array($link->get(), $dropdown_menu->get()), array('class' => $class));
       }elseif($i->get('type')=='text'){
+        /**
+         * Text
+         */
         $text = new PluginWfYml(__DIR__.'/element/text.yml');
         $text->setByTag($i->get());
         $items[] = $text->get();
@@ -110,6 +125,10 @@ class PluginBootstrapNavbar_v1{
      * Yml
      */
     $link = new PluginWfYml(__DIR__.'/element/link.yml');
+    /**
+     * Style
+     */
+    $link->setByTag(array('style' => $data->get('style')));
     /**
      * attribute/class
      */
