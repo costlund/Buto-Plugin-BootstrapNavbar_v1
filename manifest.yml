@@ -1,5 +1,9 @@
-version: '1.8'
+version: '1.9'
 history:
+  '1.9':
+    date: '2019-10-11'
+    title: Expand navbar
+    description: 'Navbar expand on small devices.'
   '1.8':
     date: '2019-10-10'
     title: Style
