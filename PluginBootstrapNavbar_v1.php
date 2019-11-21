@@ -60,7 +60,10 @@ class PluginBootstrapNavbar_v1{
         /**
          * Link
          */
-        $items[] = wfDocument::createHtmlElement('li', array($this->getLink($i, 'nav-link')->get()));
+        $link = $this->getLink($i, 'nav-link');
+        $link = $this->attribute_set($link, $i->get('attribute'));
+        $link = $this->settings_set($link, $i->get('settings'));
+        $items[] = wfDocument::createHtmlElement('li', array($link->get()));
       }elseif($i->get('type')=='dropdown'){
         /**
          * Dropdown
@@ -114,11 +117,32 @@ class PluginBootstrapNavbar_v1{
          * Text
          */
         $text = new PluginWfYml(__DIR__.'/element/text.yml');
-        $text->setByTag($i->get());
+        $text->setByTag($i->get(), 'rs', true);
+        $text = $this->attribute_set($text, $i->get('attribute'));
+        $text = $this->settings_set($text, $i->get('settings'));
         $items[] = $text->get();
       }
     }
     return $items;
+  }
+  private function attribute_set($element, $attribute){
+    if($attribute){
+      foreach ($attribute as $key => $value) {
+        $item = new PluginWfArray($value);
+        if($element->get("attribute/$key")){
+          $element->set("attribute/$key", $element->get("attribute/$key").' '.$value);
+        }else{
+          $element->set("attribute/$key", $value);
+        }
+      }
+    }
+    return $element;
+  }
+  private function settings_set($element, $settings){
+    if($settings){
+      $element->set('settings', $settings);
+    }
+    return $element;
   }
   private function getLink($data, $class = 'dropdown-item'){
     /**

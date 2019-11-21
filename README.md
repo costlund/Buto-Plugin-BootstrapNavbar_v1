@@ -61,6 +61,13 @@ data:
               onclick: "alert()"
         -
           text: Link 3
+          attribute:
+            class: parantes
+            style: 'color:red'
+          settings:
+            role:
+              item:
+                - webmaster
           onclick: "alert()"
         -
           text: Item method
