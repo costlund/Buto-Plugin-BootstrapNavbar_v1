@@ -1,5 +1,9 @@
-version: '1.10.0'
+version: '1.11.0'
 history:
+  '1.11.0':
+    date: '2019-12-23'
+    title: Link class
+    description: 'Add param attribute/class to link.'
   '1.10.0':
     date: '2019-11-21'
     title: Attribute and Settings

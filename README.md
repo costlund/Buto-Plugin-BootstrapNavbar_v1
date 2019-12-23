@@ -28,6 +28,8 @@ data:
       item:
         -
           text: Link 1
+          attribute:
+            class: webmaster-text
           disabled: true
           href: '/test'
         -

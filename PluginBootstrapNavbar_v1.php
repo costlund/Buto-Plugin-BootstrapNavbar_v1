@@ -146,6 +146,12 @@ class PluginBootstrapNavbar_v1{
   }
   private function getLink($data, $class = 'dropdown-item'){
     /**
+     *
+     */
+    if($data->get('attribute/class')){
+      $class .= ' '.$data->get('attribute/class');
+    }
+    /**
      * Yml
      */
     $link = new PluginWfYml(__DIR__.'/element/link.yml');
