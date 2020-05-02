@@ -9,8 +9,20 @@ data:
   plugin: 'bootstrap/navbar_v1'
   method: navbar
   data:
-    _: 'https://getbootstrap.com/docs/4.0/components/navbar/'
-    brand: Navbar
+    brand_href: /
+    brand:
+      -
+        type: img
+        attribute:
+          src: /theme/_folder_/_folder_/logo.png
+          style:
+            width: 24px
+            margin-top: -5px
+      -
+        type: span
+        attribute:
+          class: d-sm-none
+        innerHTML: 'Brand-name'
     navbar:
       id: _my_navbar_id_
       element_before:
