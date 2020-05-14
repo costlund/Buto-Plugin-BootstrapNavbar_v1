@@ -1,5 +1,9 @@
-version: '1.11.1'
+version: '1.11.2'
 history:
+  '1.11.2':
+    date: '2020-05-14'
+    title: Error handling
+    description: 'Error handling if param item not set.'
   '1.11.1':
     date: '2020-05-02'
     title: Readme

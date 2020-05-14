@@ -94,6 +94,16 @@ class PluginBootstrapNavbar_v1{
          * 
          */
         $i->set('item', wfSettings::getSettingsFromYmlString($i->get('item')));
+        /**
+         * 
+         */
+        if(!$i->get('item')){
+          $i->set('item/0/text', '(Param item is empty)');
+          $i->set('item/0/onclick', 'alert(this.innerHTML)');
+        }
+        /**
+         * 
+         */
         foreach ($i->get('item') as $key2 => $value2) {
           $j = new PluginWfArray($value2);
           if(!$j->get('type')){$j->set('type', 'link');}
