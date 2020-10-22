@@ -1,5 +1,9 @@
-version: '1.11.2'
+version: '1.11.3'
 history:
+  '1.11.3':
+    date: '2020-10-22'
+    title: 'Readme'
+    description: 'Readme improvement.'
   '1.11.2':
     date: '2020-05-14'
     title: Error handling
