@@ -1,64 +1,64 @@
-version: '1.11.3'
+version: 1.11.3
 history:
-  '1.11.3':
+  1.11.3:
     date: '2020-10-22'
-    title: 'Readme'
+    title: Readme
     description: 'Readme improvement.'
-  '1.11.2':
+  1.11.2:
     date: '2020-05-14'
-    title: Error handling
+    title: 'Error handling'
     description: 'Error handling if param item not set.'
-  '1.11.1':
+  1.11.1:
     date: '2020-05-02'
     title: Readme
     description: 'Readme improvement.'
-  '1.11.0':
+  1.11.0:
     date: '2019-12-23'
-    title: Link class
+    title: 'Link class'
     description: 'Add param attribute/class to link.'
-  '1.10.0':
+  1.10.0:
     date: '2019-11-21'
-    title: Attribute and Settings
+    title: 'Attribute and Settings'
     description: 'Add param attribute and settings to item.'
-  '1.9.0':
+  1.9.0:
     date: '2019-10-11'
-    title: Expand navbar
+    title: 'Expand navbar'
     description: 'Navbar expand on small devices.'
-  '1.8.0':
+  1.8.0:
     date: '2019-10-10'
     title: Style
     description: 'Set style on link.'
-  '1.7.0':
+  1.7.0:
     date: '2019-10-09'
     description: 'Add param item_method.'
-  '1.6.0':
+  1.6.0:
     date: '2019-05-08'
     description: 'Add items right align.'
-  '1.5.0':
+  1.5.0:
     date: '2019-03-26'
     description: 'Add type text in navbar and dropdown.'
-  '1.4.0':
+  1.4.0:
     date: '2019-01-21'
     description: 'Add attribute/target support.'
-  '1.3.0':
+  1.3.0:
     date: '2018-12-11'
     description: 'Add settings to elements.'
-  '1.2.0':
+  1.2.0:
     date: '2018-12-10'
     description: 'Set brand href and onclick.'
-  '1.1.0':
+  1.1.0:
     date: '2018-12-10'
     description: 'Generate id if not exist.'
-  '1.0.0':
+  1.0.0:
     date: '2018-12-10'
     description: 'First version.'
 plugin:
   -
     name: wf/array
-    version: 1.0.1
+    version: 1.2.0
   -
     name: wf/yml
-    version: '1.1'
+    version: 1.2.2
 sys:
   -
     name: mercury
@@ -66,6 +66,6 @@ sys:
       - '1.0'
 php:
   - '7.2'
-author: Claes Östlund
-links:
+author: 'Claes Östlund'
+links: null
 description: ''
