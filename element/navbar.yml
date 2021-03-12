@@ -4,6 +4,8 @@ attribute:
 innerHTML:
   -
     type: a
+    settings:
+      enabled: rs:brand
     attribute:
       class: navbar-brand
       href: 'rs:brand_href'

@@ -19,7 +19,7 @@ class PluginBootstrapNavbar_v1{
       $brand_onclick = $data->get('data/brand_onclick');
     }
     $element = new PluginWfYml(__DIR__.'/element/navbar.yml');
-    $element->setByTag(array('data-target' => '#'.$id, 'id' => $id, 'brand_href' => $brand_href, 'brand_onclick' => $brand_onclick));
+    $element->setByTag(array('data-target' => '#'.$id, 'id' => $id, 'brand_href' => $brand_href, 'brand_onclick' => $brand_onclick, 'brand' => $data->get('data/brand')));
     if($data->get('data/brand')){
       $brand = new PluginWfArray($data->get('data/brand'));
     }else{
