@@ -116,6 +116,7 @@ class PluginBootstrapNavbar_v1{
           }elseif($j->get('type')=='text'){
             $text = new PluginWfYml(__DIR__.'/element/dropdown_text.yml');
             $text->setByTag($j->get());
+            $text = $this->attribute_set($text, $j->get('attribute'));
             $text->set('settings', $j->get('settings'));
             $dropdown_items[] = $text->get();
           }

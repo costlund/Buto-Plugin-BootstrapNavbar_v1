@@ -1,5 +1,9 @@
-version: 1.12.0
+version: 1.13.0
 history:
+  1.13.0:
+    date: '2021-04-29'
+    title: Text
+    description: 'Handle attribute when type is text.'
   1.12.0:
     date: '2021-03-12'
     title: Brand
