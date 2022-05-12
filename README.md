@@ -53,6 +53,14 @@ data:
           text: Link 5
           href: '#link_5'
 ```
+Add from file.
+```
+        -
+          type: dropdown
+          text: Media
+          item: yml:/theme/[theme]/layout/links.yml:media
+```
+
 Element before and after.
 ```
 type: widget
@@ -103,4 +111,8 @@ item:
     item_method:
       plugin: _my_/_plugin_
       method: _nav_items_
+```
+Icon.
+```
+    icon: house
 ```

@@ -1,5 +1,9 @@
-version: 1.13.0
+version: 1.14.0
 history:
+  1.14.0:
+    date: '2021-05-10'
+    title: Icons
+    description: 'Add icons.'
   1.13.0:
     date: '2021-04-29'
     title: Text
@@ -67,6 +71,9 @@ plugin:
   -
     name: wf/yml
     version: 1.3.0
+  -
+    name: icons/bootstrap_v1_8_1
+    version: 1.0.0
 sys:
   -
     name: mercury

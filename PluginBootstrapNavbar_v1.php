@@ -70,7 +70,7 @@ class PluginBootstrapNavbar_v1{
          */
         $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
         $link->set('settings', $i->get('settings'));
-        $link->set('innerHTML', $i->get('text'));
+        $link->setByTag($i->get(), 'rs', true);
         $class = 'nav-item dropdown';
         if($i->get('active')){
           $class .= ' active';
@@ -167,24 +167,12 @@ class PluginBootstrapNavbar_v1{
      */
     $link = new PluginWfYml(__DIR__.'/element/link.yml');
     /**
-     * Style
-     */
-    $link->setByTag(array('style' => $data->get('style')));
-    /**
      * attribute/class
      */
     $link->set('attribute/class', $class);
     if($data->get('disabled')){
       $link->set('attribute/class', $link->get('attribute/class').' disabled');
     }
-    /**
-     * Settings
-     */
-    $link->set('settings', $data->get('settings'));
-    /**
-     * innerHTML
-     */
-    $link->set('innerHTML', $data->get('text'));
     /**
      * attribute/href
      */
@@ -203,6 +191,10 @@ class PluginBootstrapNavbar_v1{
     if($data->get('target')){
       $link->set('attribute/target', $data->get('target'));
     }
+    /**
+     * 
+     */
+    $link->setByTag($data->get(), 'rs', true);
     /**
      * 
      */

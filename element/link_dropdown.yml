@@ -7,4 +7,17 @@ attribute:
   data-toggle: dropdown
   aria-haspopup: true
   aria-expanded: false
-innerHTML: Dropdown
+innerHTML:
+  -
+    type: widget
+    settings:
+      enabled: rs:icon
+    data:
+      plugin: icons/bootstrap_v1_8_1
+      method: icon
+      data:
+        icon: rs:icon
+        style: "margin-top:-4px"
+  -
+    type: span
+    innerHTML: rs:text
