@@ -1,5 +1,9 @@
-version: 1.14.1
+version: 1.15.0
 history:
+  1.15.0:
+    date: '2022-05-31'
+    title: Item method
+    description: 'Param item_method handle whole link instead of just item param.'
   1.14.1:
     date: '2022-05-12'
     title: Versions

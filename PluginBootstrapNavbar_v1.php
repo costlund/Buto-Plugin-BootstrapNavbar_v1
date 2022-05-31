@@ -66,6 +66,15 @@ class PluginBootstrapNavbar_v1{
         $items[] = wfDocument::createHtmlElement('li', array($link->get()));
       }elseif($i->get('type')=='dropdown'){
         /**
+         * Item method.
+         */
+        if($i->get('item_method')){
+          wfPlugin::includeonce($i->get('item_method/plugin'));
+          $obj = wfSettings::getPluginObj($i->get('item_method/plugin'));
+          $method = $i->get('item_method/method');
+          $i->array = $obj->$method($i->get());
+        }
+        /**
          * Dropdown
          */
         $link = new PluginWfYml(__DIR__.'/element/link_dropdown.yml');
@@ -81,15 +90,6 @@ class PluginBootstrapNavbar_v1{
           $dropdown_menu = new PluginWfYml(__DIR__.'/element/dropdown_menu_right.yml');
         }
         $dropdown_items = array();
-        /**
-         * Item method.
-         */
-        if($i->get('item_method')){
-          wfPlugin::includeonce($i->get('item_method/plugin'));
-          $obj = wfSettings::getPluginObj($i->get('item_method/plugin'));
-          $method = $i->get('item_method/method');
-          $i->set('item', $obj->$method($i->get('item_method/data')));
-        }
         /**
          * 
          */
