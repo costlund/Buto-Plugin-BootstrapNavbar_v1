@@ -1,8 +1,12 @@
-version: 1.15.0
+version: 1.15.1
 history:
+  1.15.1:
+    date: '2022-06-07'
+    title: Versions
+    description: 'Versions update.'
   1.15.0:
     date: '2022-05-31'
-    title: Item method
+    title: 'Item method'
     description: 'Param item_method handle whole link instead of just item param.'
   1.14.1:
     date: '2022-05-12'
@@ -78,7 +82,7 @@ plugin:
     version: 1.2.3
   -
     name: wf/yml
-    version: 1.3.1
+    version: 1.4.0
   -
     name: icons/bootstrap_v1_8_1
     version: 1.1.0
