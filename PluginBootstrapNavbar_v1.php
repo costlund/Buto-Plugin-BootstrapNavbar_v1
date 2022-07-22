@@ -45,7 +45,7 @@ class PluginBootstrapNavbar_v1{
     $element->setByTag(array('item_right' => $item_right->get()));
     wfDocument::renderElement(array($element->get()));
   }
-  private function getNavbar($data, $item2 = false){
+  private function getNavbar($data, $right = false){
     $items = array();
     foreach ($data as $key => $value) {
       $i = new PluginWfArray($value);
@@ -84,7 +84,7 @@ class PluginBootstrapNavbar_v1{
         if($i->get('active')){
           $class .= ' active';
         }
-        if(!$item2){
+        if(!$right){
           $dropdown_menu = new PluginWfYml(__DIR__.'/element/dropdown_menu.yml');
         }else{
           $dropdown_menu = new PluginWfYml(__DIR__.'/element/dropdown_menu_right.yml');
@@ -156,6 +156,15 @@ class PluginBootstrapNavbar_v1{
     return $element;
   }
   private function getLink($data, $class = 'dropdown-item'){
+    /**
+     * link_method
+     */
+    if($data->get('link_method')){
+      wfPlugin::includeonce($data->get('link_method/plugin'));
+      $obj = wfSettings::getPluginObj($data->get('link_method/plugin'));
+      $method = $data->get('link_method/method');
+      $data->array = $obj->$method($data->get());
+    }
     /**
      *
      */

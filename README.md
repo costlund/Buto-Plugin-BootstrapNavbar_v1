@@ -116,3 +116,11 @@ Icon.
 ```
     icon: house
 ```
+Link method.
+```
+item:
+  -
+    link_method:
+      plugin: memb_inc/vote
+      method: nav_item_my_account
+```
