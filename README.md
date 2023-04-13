@@ -2,27 +2,13 @@
 Bootstrap 4 navbar.
 
 ## Example
-Basic.
+### Basic
 ```
 type: widget
 data:
   plugin: 'bootstrap/navbar_v1'
   method: navbar
   data:
-    brand_href: /
-    brand:
-      -
-        type: img
-        attribute:
-          src: /plugin/theme/include/icon/icon.png
-          style:
-            width: 24px
-            margin-top: -5px
-      -
-        type: span
-        attribute:
-          class: d-sm-none
-        innerHTML: 'Brand-name'
     navbar:
       id: _my_navbar_id_
       item:
@@ -53,6 +39,35 @@ data:
           text: Link 5
           href: '#link_5'
 ```
+
+### Brand
+```
+data:
+  data:
+    brand_href: /
+    brand:
+      -
+        type: img
+        attribute:
+          src: /plugin/theme/include/icon/icon.png
+          style:
+            width: 24px
+            margin-top: -5px
+      -
+        type: span
+        attribute:
+          class: d-sm-none
+        innerHTML: 'Brand-name'
+```
+### Background
+Change background (optional). Default is light.
+```
+data:
+  data:
+    bg: primary
+```
+
+### From file
 Add from file.
 ```
         -
@@ -61,6 +76,7 @@ Add from file.
           item: yml:/theme/[theme]/layout/links.yml:media
 ```
 
+### Element
 Element before and after.
 ```
 type: widget
@@ -82,45 +98,55 @@ data:
             class: navbar-text
           innerHTML: (text after)
 ```
-Disabled.
-Attribute.
-Style.
-Settings.
+### Item
+#### Disabled
 ```
 item:
   -
-    text: Link 1
+    disabled: true
+```
+#### Attribute
+```
+item:
+  -
     attribute:
       class: webmaster-text
-    disabled: true
-    href: '/test'
+```
+#### Style
+```
+item:
+  -
     style: 'font-weight:bold'
+```
+#### Settings
+```
+item:
+  -
     settings:
       role:
         item:
           - webmaster
 ```
+#### Method
 Item method.
 ```
 item:
   -
-    text: Item method
-    type: dropdown
-    settings:
-      enabled: true
     item_method:
       plugin: _my_/_plugin_
       method: _nav_items_
 ```
-Icon.
-```
-    icon: house
-```
-Link method.
+#### Link method
 ```
 item:
   -
     link_method:
       plugin: memb_inc/vote
       method: nav_item_my_account
+```
+#### Icon
+```
+item:
+  -
+    icon: house
 ```

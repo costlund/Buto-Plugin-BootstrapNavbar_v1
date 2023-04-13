@@ -1,6 +1,6 @@
 type: nav
 attribute:
-  class: navbar navbar-expand-sm navbar-light bg-light
+  class: rs:class
 innerHTML:
   -
     type: div

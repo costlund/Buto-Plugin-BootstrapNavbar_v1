@@ -18,6 +18,18 @@ class PluginBootstrapNavbar_v1{
     if($data->get('data/brand_onclick')){
       $brand_onclick = $data->get('data/brand_onclick');
     }
+    /**
+     * class
+     */
+    $class = 'navbar navbar-expand-sm navbar-light';
+    if(!$data->get('data/bg')){
+      $class .= ' bg-light';
+    }else{
+      $class .= ' bg-'.$data->get('data/bg');
+    }
+    /**
+     * 
+     */
     $element = new PluginWfYml(__DIR__.'/element/navbar.yml');
     $element->setByTag(array('data-target' => '#'.$id, 'data-bs-target' => '#'.$id, 'id' => $id, 'brand_href' => $brand_href, 'brand_onclick' => $brand_onclick, 'brand' => $data->get('data/brand')));
     if($data->get('data/brand')){
@@ -41,7 +53,7 @@ class PluginBootstrapNavbar_v1{
     }else{
       $item_right = new PluginWfArray();
     }
-    $element->setByTag(array('brand' => $brand->get(), 'item' => $item->get(), 'element_before' => $data->get('data/navbar/element_before'), 'element_after' => $data->get('data/navbar/element_after')));
+    $element->setByTag(array('brand' => $brand->get(), 'item' => $item->get(), 'element_before' => $data->get('data/navbar/element_before'), 'element_after' => $data->get('data/navbar/element_after'), 'class' => $class));
     $element->setByTag(array('item_right' => $item_right->get()));
     wfDocument::renderElement(array($element->get()));
   }
