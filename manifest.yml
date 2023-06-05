@@ -1,5 +1,9 @@
-version: 1.18.0
+version: 1.19.0
 history:
+  1.19.0:
+    date: '2023-06-05'
+    title: Item right
+    description: 'Add item right support for Bootstrap version 5'
   1.18.0:
     date: '2023-04-13'
     title: Background

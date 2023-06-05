@@ -52,7 +52,7 @@ innerHTML:
             settings:
               enabled: true
             attribute:
-              class: navbar-nav
+              class: navbar-nav ms-auto
             innerHTML: rs:item_right
           -
             type: div
