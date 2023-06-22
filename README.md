@@ -61,6 +61,7 @@ data:
 ```
 ### Background
 Change background (optional). Default is light.
+Set none for transparency.
 ```
 data:
   data:

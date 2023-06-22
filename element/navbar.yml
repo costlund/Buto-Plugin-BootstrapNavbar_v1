@@ -20,6 +20,10 @@ innerHTML:
         type: button
         attribute: 
           class: navbar-toggler
+          style:
+            position: absolute
+            right: 10px
+            top: 10px
           type: button
           data-toggle: collapse
           data-bs-toggle: collapse
