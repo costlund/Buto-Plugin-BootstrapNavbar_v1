@@ -60,12 +60,24 @@ data:
         innerHTML: 'Brand-name'
 ```
 ### Background
-Change background (optional). Default is light.
-Set none for transparency.
+Change background (optional). Default is dark/dark.
 ```
 data:
   data:
-    bg: primary
+```
+```
+    navbar_theme: dark
+    bg: dark
+```
+```
+    navbar_theme: dark
+    bg: primary (or secondary)
+```
+```
+    navbar_theme: light
+    bg: none
+    style:
+      background-color: '#e3f2fd'
 ```
 
 ### From file

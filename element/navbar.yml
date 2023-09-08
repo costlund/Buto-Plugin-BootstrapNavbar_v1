@@ -1,6 +1,7 @@
 type: nav
 attribute:
   class: rs:class
+  style: rs:style
 innerHTML:
   -
     type: div

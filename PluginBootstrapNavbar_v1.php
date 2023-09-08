@@ -21,11 +21,21 @@ class PluginBootstrapNavbar_v1{
     /**
      * class
      */
-    $class = 'navbar navbar-expand-sm navbar-light';
-    if(!$data->get('data/bg')){
-      $class .= ' bg-light';
-    }else{
-      $class .= ' bg-'.$data->get('data/bg');
+    $navbar_theme = 'dark';
+    $bg = 'dark';
+    if($data->get('data/navbar_theme')){
+      $navbar_theme = $data->get('data/navbar_theme');
+    }
+    if($data->get('data/bg')){
+      $bg = $data->get('data/bg');
+    }
+    $class = "navbar navbar-expand-sm navbar-$navbar_theme bg-$bg";
+    /**
+     * style
+     */
+    $style = null;
+    if($data->get('data/style')){
+      $style = $data->get('data/style');
     }
     /**
      * 
@@ -53,7 +63,7 @@ class PluginBootstrapNavbar_v1{
     }else{
       $item_right = new PluginWfArray();
     }
-    $element->setByTag(array('brand' => $brand->get(), 'item' => $item->get(), 'element_before' => $data->get('data/navbar/element_before'), 'element_after' => $data->get('data/navbar/element_after'), 'class' => $class));
+    $element->setByTag(array('brand' => $brand->get(), 'item' => $item->get(), 'element_before' => $data->get('data/navbar/element_before'), 'element_after' => $data->get('data/navbar/element_after'), 'class' => $class, 'style' => $style));
     $element->setByTag(array('item_right' => $item_right->get()));
     wfDocument::renderElement(array($element->get()));
   }

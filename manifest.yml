@@ -1,5 +1,9 @@
-version: 1.19.2
+version: 1.20.0
 history:
+  1.20.0:
+    date: '2023-09-08'
+    title: 'Class and style'
+    description: 'Set navbar class and style improvements.'
   1.19.2:
     date: '2023-06-22'
     title: Navbar toggler
