@@ -70,7 +70,7 @@ data:
     bg: dark
 ```
 ```
-    navbar_theme: dark
+    navbar_theme: light
     bg: primary (or secondary)
 ```
 ```
