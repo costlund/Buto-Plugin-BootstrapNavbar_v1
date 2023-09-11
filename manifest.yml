@@ -1,20 +1,24 @@
-version: 1.20.0
+version: 1.20.1
 history:
+  1.20.1:
+    date: '2023-09-11'
+    title: Versions
+    description: 'Versions update.'
   1.20.0:
     date: '2023-09-08'
     title: 'Class and style'
     description: 'Set navbar class and style improvements.'
   1.19.2:
     date: '2023-06-22'
-    title: Navbar toggler
+    title: 'Navbar toggler'
     description: 'Align to right.'
   1.19.1:
     date: '2023-06-05'
-    title: Item right
+    title: 'Item right'
     description: 'Add item right support for Bootstrap version 5'
   1.19.0:
     date: '2023-06-05'
-    title: Item right
+    title: 'Item right'
     description: 'Add item right support for Bootstrap version 5'
   1.18.0:
     date: '2023-04-13'
@@ -111,13 +115,13 @@ history:
 plugin:
   -
     name: wf/array
-    version: 1.2.4
-  -
-    name: wf/yml
     version: 1.5.0
   -
+    name: wf/yml
+    version: 1.8.0
+  -
     name: icons/bootstrap_v1_8_1
-    version: 1.1.1
+    version: 1.2.1
 sys:
   -
     name: mercury
