@@ -6,6 +6,13 @@ attribute:
   style: rs:style
 innerHTML: 
   -
+    type: img
+    settings:
+      enabled: rs:src
+    attribute: 
+      src: rs:src
+      style: rs:img_style
+  -
     type: widget
     settings:
       enabled: rs:icon

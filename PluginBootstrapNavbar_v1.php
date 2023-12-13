@@ -198,6 +198,16 @@ class PluginBootstrapNavbar_v1{
      */
     $link = new PluginWfYml(__DIR__.'/element/link.yml');
     /**
+     * icon/ img src
+     */
+    if(substr((string)$data->get('icon'), 0, 1)=='/'){
+      $data->set('src', $data->get('icon'));
+      $data->set('icon', null);
+      if(!$data->get('img_style')){
+        $data->set('img_style', array('height' => '17px'));
+      }
+    }
+    /**
      * attribute/class
      */
     $link->set('attribute/class', $class);

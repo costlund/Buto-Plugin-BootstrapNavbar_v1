@@ -1,5 +1,9 @@
-version: 1.20.2
+version: 1.21.0
 history:
+  1.21.0:
+    date: '2023-12-13'
+    title: Icon
+    description: 'Icon can be path to file or from plugin icons/bootstrap_v1_8_1.'
   1.20.2:
     date: '2023-09-27'
     title: Versions

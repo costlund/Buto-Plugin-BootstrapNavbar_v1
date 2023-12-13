@@ -158,8 +158,22 @@ item:
       method: nav_item_my_account
 ```
 #### Icon
+Icon from plugin icons/bootstrap_v1_8_1 or image src.
 ```
 item:
   -
+```
+Using icons/bootstrap_v1_8_1.
+```
     icon: house
+```
+Can also be a path to file.
+```
+    icon: /path_to_file/icon.png
+```
+If file on could set style.
+If not set default is 17px height.
+```
+    img_style:
+      height: 30px
 ```
