@@ -1,6 +1,6 @@
 type: div
 attribute:
-  class: dropdown-menu dropdown-menu-end
+  class: dropdown-menu dropdown-menu-right
   aria-labelledby: navbarDropdown
 innerHTML:
   -

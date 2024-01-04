@@ -1,5 +1,9 @@
-version: 1.21.0
+version: 1.21.1
 history:
+  1.21.1:
+    date: '2024-01-04'
+    title: Dropdown menu right
+    description: 'Replace class dropdown-menu-end to dropdown-menu-right.'
   1.21.0:
     date: '2023-12-13'
     title: Icon
