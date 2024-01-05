@@ -1,5 +1,9 @@
-version: 1.21.1
+version: 1.21.2
 history:
+  1.21.2:
+    date: '2024-01-04'
+    title: Dropdown menu right
+    description: 'Replace class dropdown-menu-rigth to dropdown-menu-end due to Bootstrap 5.'
   1.21.1:
     date: '2024-01-04'
     title: Dropdown menu right
