@@ -157,6 +157,22 @@ item:
       plugin: memb_inc/vote
       method: nav_item_my_account
 ```
+Method example.
+```
+public function nav_item_my_account($data){
+  $data = new PluginWfArray($data);
+  $element = new PluginWfYml(__DIR__.'/element/nav_item_my_account.yml');
+  $data->merge($element->get());
+  return $data->get();
+}
+```
+Element example.
+```
+onclick: "alert('test')"
+text: Test
+settings:
+  enabled: true
+```
 #### Icon
 Icon from plugin icons/bootstrap_v1_8_1 or image src.
 ```
