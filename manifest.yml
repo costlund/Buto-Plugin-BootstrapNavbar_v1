@@ -1,5 +1,9 @@
-version: 1.21.2
+version: 1.21.3
 history:
+  1.21.3:
+    date: '2025-05-14'
+    title: Fixed top
+    description: 'Add fixed-top.'
   1.21.2:
     date: '2024-01-04'
     title: Dropdown menu right

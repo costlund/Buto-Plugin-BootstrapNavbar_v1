@@ -31,6 +31,10 @@ class PluginBootstrapNavbar_v1{
     }
     $class = "navbar navbar-expand-sm navbar-$navbar_theme bg-$bg";
     /**
+     * fixed-top
+     */
+    $class .= " fixed-top";
+    /**
      * style
      */
     $style = null;
