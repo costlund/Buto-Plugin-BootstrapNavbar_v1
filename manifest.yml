@@ -1,5 +1,9 @@
-version: 1.21.3
+version: 1.21.4
 history:
+  1.21.4:
+    date: '2025-05-15'
+    title: Fixed top
+    description: 'Add fixed-top as option via fixed-top=true attribute.'
   1.21.3:
     date: '2025-05-14'
     title: Fixed top

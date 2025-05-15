@@ -33,7 +33,9 @@ class PluginBootstrapNavbar_v1{
     /**
      * fixed-top
      */
-    $class .= " fixed-top";
+    if($data->get('data/fixed-top')){
+      $class .= " fixed-top";
+    }
     /**
      * style
      */

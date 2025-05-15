@@ -1,0 +1,180 @@
+readme:
+  name: Buto-Plugin-BootstrapNavbar_v1
+  description: |
+    - Bootstrap 5 navbar.
+  item:
+    -
+      name: Widgets
+      item:
+        -
+          name: widget_navbar
+          description: |
+            ```
+            type: widget
+            data:
+              plugin: 'bootstrap/navbar_v1'
+              method: navbar
+              data:
+            ```
+            Navbar.
+            ```
+                navbar:
+            ```
+            Id.
+            ```
+                  id: _my_navbar_id_
+            ```
+            Fixed-top.
+            ```
+                  fixed-top: true
+            ```
+            Brand.
+            ```
+                  brand_href: /
+                  brand:
+                    -
+                      type: img
+                      attribute:
+                        src: /plugin/theme/include/icon/icon.png
+                        style:
+                          width: 24px
+                          margin-top: -5px
+                    -
+                      type: span
+                      attribute:
+                        class: d-sm-none
+                      innerHTML: 'Brand-name'
+            ```
+            Background. Change background (optional). Default is dark/dark.
+            ```
+                  navbar_theme: dark
+                  bg: dark
+            ```
+            ```
+                  navbar_theme: light
+                  bg: primary (or secondary)
+            ```
+            ```
+                  navbar_theme: light
+                  bg: none
+                  style:
+                    background-color: '#e3f2fd'
+            ```
+            Item.
+            ```
+                  item:
+                    -
+                      text: Link 1
+                      href: '#link_1'
+                    -
+                      type: dropdown
+                      text: Dropdown
+                      item:
+                        -
+                          text: Link 2
+                          href: '#link_2'
+                        -
+                          type: divider
+                        -
+                          text: Link 3
+                          href: '#link_3'
+                        -
+                          type: text
+                          text: Text 1
+                          style: 'font-style:italic'
+                        -
+                          text: Link 4
+                          onclick: "alert('Link 4')"
+                  item_right:
+                    -
+                      text: Link 5
+                      href: '#link_5'
+            ```
+            Item disabled.
+            ```
+                      disabled: true
+            ```
+            Item attribute.
+            ```
+                      attribute:
+                        class: webmaster-text
+            ```
+            Item style.
+            ```
+                      style: 'font-weight:bold'
+            ```
+            Item settings.
+            ```
+                      settings:
+                        role:
+                          item:
+                            - webmaster
+            ```
+            Item method.
+            ```
+                      item_method:
+                        plugin: _my_/_plugin_
+                        method: _nav_items_
+            ```
+            Item link method (example below).
+            ```
+                      link_method:
+                        plugin: memb_inc/vote
+                        method: nav_item_my_account
+            ```
+            Item icon.
+            Using from plugin icons/bootstrap_v1_8_1 or image src.
+            ```
+                      icon: house
+            ```
+            Item icon. Can also be a path to file. Also set img_style if needed.
+            ```
+                      icon: /path_to_file/icon.png
+                      img_style:
+                        height: 30px
+            ```
+            Add from file.
+            ```
+                    -
+                      type: dropdown
+                      text: Media
+                      item: yml:/theme/[theme]/layout/links.yml:media
+            ```
+            Element before and after.
+            ```
+                  element_before:
+                    -
+                      type: span
+                      attribute:
+                        class: navbar-text
+                      innerHTML: (text before)
+                  element_after:
+                    -
+                      type: span
+                      attribute:
+                        class: navbar-text
+                      innerHTML: (text after)
+            ```
+          item:
+            -
+              name: Item link method (example)
+              description: |
+                ```
+                public function nav_item_my_account($data){
+                  $data = new PluginWfArray($data);
+                  $element = new PluginWfYml(__DIR__.'/element/nav_item_my_account.yml');
+                  $data->merge($element->get());
+                  return $data->get();
+                }
+                ```
+    -
+      name: Methods
+      item:
+        -
+          name: getNavbar
+        -
+          name: attribute_set
+        -
+          name: settings_set
+        -
+          name: getLink
