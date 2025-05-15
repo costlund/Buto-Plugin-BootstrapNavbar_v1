@@ -19,37 +19,37 @@ data:
   plugin: 'bootstrap/navbar_v1'
   method: navbar
   data:</code></pre>
+<p>Brand.</p>
+<pre><code>    brand_href: /
+    brand:
+      -
+        type: img
+        attribute:
+          src: /plugin/theme/include/icon/icon.png
+          style:
+            width: 24px
+            margin-top: -5px
+      -
+        type: span
+        attribute:
+          class: d-sm-none
+        innerHTML: 'Brand-name'</code></pre>
+<p>Fixed-top.</p>
+<pre><code>    fixed-top: true</code></pre>
+<p>Background. Change background (optional). Default is dark/dark.</p>
+<pre><code>    navbar_theme: dark
+    bg: dark</code></pre>
+<pre><code>    navbar_theme: light
+    bg: primary (or secondary)</code></pre>
+<pre><code>    navbar_theme: light
+    bg: none
+    style:
+      background-color: '#e3f2fd'</code></pre>
 <p>Navbar.</p>
 <pre><code>    navbar:</code></pre>
 <p>Id.</p>
 <pre><code>      id: _my_navbar_id_</code></pre>
-<p>Fixed-top.</p>
-<pre><code>      fixed-top: true</code></pre>
-<p>Brand.</p>
-<pre><code>      brand_href: /
-      brand:
-        -
-          type: img
-          attribute:
-            src: /plugin/theme/include/icon/icon.png
-            style:
-              width: 24px
-              margin-top: -5px
-        -
-          type: span
-          attribute:
-            class: d-sm-none
-          innerHTML: 'Brand-name'</code></pre>
-<p>Background. Change background (optional). Default is dark/dark.</p>
-<pre><code>      navbar_theme: dark
-      bg: dark</code></pre>
-<pre><code>      navbar_theme: light
-      bg: primary (or secondary)</code></pre>
-<pre><code>      navbar_theme: light
-      bg: none
-      style:
-        background-color: '#e3f2fd'</code></pre>
-<p>Item.</p>
+<p>Item (left or right).</p>
 <pre><code>      item:
         -
           text: Link 1

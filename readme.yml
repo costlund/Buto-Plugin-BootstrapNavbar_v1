@@ -16,6 +16,42 @@ readme:
               method: navbar
               data:
             ```
+            Brand.
+            ```
+                brand_href: /
+                brand:
+                  -
+                    type: img
+                    attribute:
+                      src: /plugin/theme/include/icon/icon.png
+                      style:
+                        width: 24px
+                        margin-top: -5px
+                  -
+                    type: span
+                    attribute:
+                      class: d-sm-none
+                    innerHTML: 'Brand-name'
+            ```
+            Fixed-top.
+            ```
+                fixed-top: true
+            ```
+            Background. Change background (optional). Default is dark/dark.
+            ```
+                navbar_theme: dark
+                bg: dark
+            ```
+            ```
+                navbar_theme: light
+                bg: primary (or secondary)
+            ```
+            ```
+                navbar_theme: light
+                bg: none
+                style:
+                  background-color: '#e3f2fd'
+            ```
             Navbar.
             ```
                 navbar:
@@ -24,43 +60,7 @@ readme:
             ```
                   id: _my_navbar_id_
             ```
-            Fixed-top.
-            ```
-                  fixed-top: true
-            ```
-            Brand.
-            ```
-                  brand_href: /
-                  brand:
-                    -
-                      type: img
-                      attribute:
-                        src: /plugin/theme/include/icon/icon.png
-                        style:
-                          width: 24px
-                          margin-top: -5px
-                    -
-                      type: span
-                      attribute:
-                        class: d-sm-none
-                      innerHTML: 'Brand-name'
-            ```
-            Background. Change background (optional). Default is dark/dark.
-            ```
-                  navbar_theme: dark
-                  bg: dark
-            ```
-            ```
-                  navbar_theme: light
-                  bg: primary (or secondary)
-            ```
-            ```
-                  navbar_theme: light
-                  bg: none
-                  style:
-                    background-color: '#e3f2fd'
-            ```
-            Item.
+            Item (left or right).
             ```
                   item:
                     -
