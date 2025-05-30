@@ -1,5 +1,9 @@
-version: 1.21.5
+version: 1.21.6
 history:
+  1.21.6:
+    date: '2025-05-30'
+    title: Fixed top
+    description: 'Script to handle if Navbar Dropdown is shown to add/remove class fixed-top.'
   1.21.5:
     date: '2025-05-30'
     title: Fixed top

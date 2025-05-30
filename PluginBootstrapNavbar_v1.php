@@ -50,6 +50,7 @@ class PluginBootstrapNavbar_v1{
     /**
      * script
      * Script to handle if Navbar is collapsed to add/remove class fixed-top for the purpose of mobile devices.
+     * Script to handle if Navbar Dropdown is shown to add/remove class fixed-top.
      */
     $script = $element->get('innerHTML/1/innerHTML');
     $script = str_replace('[id]', $id, $script);

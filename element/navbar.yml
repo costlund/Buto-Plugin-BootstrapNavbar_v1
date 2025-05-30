@@ -103,4 +103,20 @@ innerHTML:
             $(nav).removeClass('_fixed-top');
           }
         });
+        $('#[id]').on('show.bs.dropdown', function () {
+          var div = $(this).parent().get(0);
+          var nav = $(div).parent().get(0);
+          if($(nav).hasClass('fixed-top')){
+            $(nav).addClass('_fixed-top');
+            $(nav).removeClass('fixed-top');
+          }
+        })
+        $('#[id]').on('hide.bs.dropdown' ,function () { 
+          var div = $(this).parent().get(0);
+          var nav = $(div).parent().get(0);
+          if($(nav).hasClass('_fixed-top')){
+            $(nav).addClass('fixed-top');
+            $(nav).removeClass('_fixed-top');
+          }
+        });
       });
