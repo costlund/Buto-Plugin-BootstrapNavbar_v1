@@ -82,25 +82,25 @@ innerHTML:
                   class: btn btn-outline-success my-2 my-sm-0
                   type: submit
                 innerHTML: Search
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  -
+    _: Subject of relacement.
+    type: script
+    innerHTML: |
+      $( document ).ready(function() {
+        $('#[id]').on('show.bs.collapse' ,function () { 
+          var div = $(this).parent().get(0);
+          var nav = $(div).parent().get(0);
+          if($(nav).hasClass('fixed-top')){
+            $(nav).addClass('_fixed-top');
+            $(nav).removeClass('fixed-top');
+          }
+        });
+        $('#[id]').on('hide.bs.collapse' ,function () { 
+          var div = $(this).parent().get(0);
+          var nav = $(div).parent().get(0);
+          if($(nav).hasClass('_fixed-top')){
+            $(nav).addClass('fixed-top');
+            $(nav).removeClass('_fixed-top');
+          }
+        });
+      });

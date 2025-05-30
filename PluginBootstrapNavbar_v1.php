@@ -47,6 +47,16 @@ class PluginBootstrapNavbar_v1{
      * 
      */
     $element = new PluginWfYml(__DIR__.'/element/navbar.yml');
+    /**
+     * script
+     * Script to handle if Navbar is collapsed to add/remove class fixed-top for the purpose of mobile devices.
+     */
+    $script = $element->get('innerHTML/1/innerHTML');
+    $script = str_replace('[id]', $id, $script);
+    $element->set('innerHTML/1/innerHTML', $script);
+    /**
+     * 
+     */
     $element->setByTag(array('data-target' => '#'.$id, 'data-bs-target' => '#'.$id, 'id' => $id, 'brand_href' => $brand_href, 'brand_onclick' => $brand_onclick, 'brand' => $data->get('data/brand')));
     if($data->get('data/brand')){
       $brand = new PluginWfArray($data->get('data/brand'));

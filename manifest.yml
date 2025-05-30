@@ -1,5 +1,9 @@
-version: 1.21.4
+version: 1.21.5
 history:
+  1.21.5:
+    date: '2025-05-30'
+    title: Fixed top
+    description: 'Script to handle if Navbar is collapsed to add/remove class fixed-top for the purpose of mobile devices.'
   1.21.4:
     date: '2025-05-15'
     title: Fixed top
