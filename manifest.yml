@@ -1,5 +1,9 @@
-version: 1.21.6
+version: 1.21.7
 history:
+  1.21.7:
+    date: '2025-06-02'
+    title: Fixed top
+    description: 'Script improvements.'
   1.21.6:
     date: '2025-05-30'
     title: Fixed top

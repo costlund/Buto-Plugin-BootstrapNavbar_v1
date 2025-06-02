@@ -88,35 +88,27 @@ innerHTML:
     innerHTML: |
       $( document ).ready(function() {
         $('#[id]').on('show.bs.collapse' ,function () { 
-          var div = $(this).parent().get(0);
-          var nav = $(div).parent().get(0);
-          if($(nav).hasClass('fixed-top')){
-            $(nav).addClass('_fixed-top');
-            $(nav).removeClass('fixed-top');
-          }
+          plugin_bootstrap_navbar_v1_handle_fixed(this);
         });
         $('#[id]').on('hide.bs.collapse' ,function () { 
-          var div = $(this).parent().get(0);
-          var nav = $(div).parent().get(0);
-          if($(nav).hasClass('_fixed-top')){
-            $(nav).addClass('fixed-top');
-            $(nav).removeClass('_fixed-top');
-          }
+          plugin_bootstrap_navbar_v1_handle_fixed(this);
         });
         $('#[id]').on('show.bs.dropdown', function () {
-          var div = $(this).parent().get(0);
-          var nav = $(div).parent().get(0);
-          if($(nav).hasClass('fixed-top')){
-            $(nav).addClass('_fixed-top');
-            $(nav).removeClass('fixed-top');
-          }
+          plugin_bootstrap_navbar_v1_handle_fixed(this);
         })
         $('#[id]').on('hide.bs.dropdown' ,function () { 
-          var div = $(this).parent().get(0);
-          var nav = $(div).parent().get(0);
-          if($(nav).hasClass('_fixed-top')){
-            $(nav).addClass('fixed-top');
-            $(nav).removeClass('_fixed-top');
-          }
+          plugin_bootstrap_navbar_v1_handle_fixed(this);
         });
       });
+      function plugin_bootstrap_navbar_v1_handle_fixed(e){
+        var div = $(e).parent().get(0);
+        var nav = $(div).parent().get(0);
+        if($(nav).hasClass('fixed-top')){
+          $(nav).addClass('_fixed-top');
+          $(nav).removeClass('fixed-top');
+        }else if($(nav).hasClass('_fixed-top')){
+          $(nav).addClass('fixed-top');
+          $(nav).removeClass('_fixed-top');
+        }
+        return null;
+      }
