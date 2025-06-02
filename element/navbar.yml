@@ -88,22 +88,32 @@ innerHTML:
     innerHTML: |
       $( document ).ready(function() {
         $('#[id]').on('show.bs.collapse' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this);
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse');
           window.scrollTo({ top:0, left:0, behavior: "instant"})
         });
         $('#[id]').on('hide.bs.collapse' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this);
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse');
         });
         $('#[id]').on('show.bs.dropdown', function () {
-          plugin_bootstrap_navbar_v1_handle_fixed(this);
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown');
         })
         $('#[id]').on('hide.bs.dropdown' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this);
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown');
         });
       });
-      function plugin_bootstrap_navbar_v1_handle_fixed(e){
+      function plugin_bootstrap_navbar_v1_handle_fixed(e, type_of_event){
         var div = $(e).parent().get(0);
         var nav = $(div).parent().get(0);
+        var icon = $(".navbar-toggler-icon").get(0);
+        /**
+         *
+         */
+        if($(icon).is(':visible') && type_of_event=='dropdown'){
+          return null;
+        }
+        /**
+         *
+         */
         if($(nav).hasClass('fixed-top')){
           $(nav).addClass('_fixed-top');
           $(nav).removeClass('fixed-top');
@@ -111,5 +121,8 @@ innerHTML:
           $(nav).addClass('fixed-top');
           $(nav).removeClass('_fixed-top');
         }
+        /**
+         *
+         */
         return null;
       }

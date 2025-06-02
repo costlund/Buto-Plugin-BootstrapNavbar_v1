@@ -1,5 +1,9 @@
-version: 1.21.8
+version: 1.21.9
 history:
+  1.21.9:
+    date: '2025-06-02'
+    title: Dropdown
+    description: 'Run script on dropdown event if toggler icon is visible.'
   1.21.8:
     date: '2025-06-02'
     title: Scroll to top
