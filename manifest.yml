@@ -1,5 +1,9 @@
-version: 1.21.9
+version: 1.22.0
 history:
+  1.22.0:
+    date: '2025-06-02'
+    title: Dropdown content
+    description: 'One could add content instead of item for a dropdown (not on right).'
   1.21.9:
     date: '2025-06-02'
     title: Dropdown

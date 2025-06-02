@@ -136,31 +136,38 @@ class PluginBootstrapNavbar_v1{
         /**
          * 
          */
-        if(!$i->get('item')){
+        if(!$i->get('item') && !$i->get('content')){
           $i->set('item/0/text', '(Param item is empty)');
           $i->set('item/0/onclick', 'alert(this.innerHTML)');
         }
-        /**
-         * 
-         */
-        foreach ($i->get('item') as $key2 => $value2) {
-          $j = new PluginWfArray($value2);
-          if(!$j->get('type')){$j->set('type', 'link');}
-          if($j->get('type')=='link'){
-            $dropdown_items[] = $this->getLink($j)->get();
-          }elseif($j->get('type')=='divider'){
-            $dropdown_divider = new PluginWfYml(__DIR__.'/element/dropdown_divider.yml');
-            $dropdown_divider->set('settings', $j->get('settings'));
-            $dropdown_items[] = $dropdown_divider->get();
-          }elseif($j->get('type')=='text'){
-            $text = new PluginWfYml(__DIR__.'/element/dropdown_text.yml');
-            $text->setByTag($j->get());
-            $text = $this->attribute_set($text, $j->get('attribute'));
-            $text->set('settings', $j->get('settings'));
-            $dropdown_items[] = $text->get();
+        if($i->get('item')){
+          /**
+           * item
+           */
+          foreach ($i->get('item') as $key2 => $value2) {
+            $j = new PluginWfArray($value2);
+            if(!$j->get('type')){$j->set('type', 'link');}
+            if($j->get('type')=='link'){
+              $dropdown_items[] = $this->getLink($j)->get();
+            }elseif($j->get('type')=='divider'){
+              $dropdown_divider = new PluginWfYml(__DIR__.'/element/dropdown_divider.yml');
+              $dropdown_divider->set('settings', $j->get('settings'));
+              $dropdown_items[] = $dropdown_divider->get();
+            }elseif($j->get('type')=='text'){
+              $text = new PluginWfYml(__DIR__.'/element/dropdown_text.yml');
+              $text->setByTag($j->get());
+              $text = $this->attribute_set($text, $j->get('attribute'));
+              $text->set('settings', $j->get('settings'));
+              $dropdown_items[] = $text->get();
+            }
           }
+          $dropdown_menu->set('innerHTML', $dropdown_items);
+        }elseif($i->get('content')){
+          /**
+           * content
+           */
+          $dropdown_menu->set('innerHTML', $i->get('content'));
         }
-        $dropdown_menu->set('innerHTML', $dropdown_items);
         $items[] = wfDocument::createHtmlElement('li', array($link->get(), $dropdown_menu->get()), array('class' => $class));
       }elseif($i->get('type')=='text'){
         /**

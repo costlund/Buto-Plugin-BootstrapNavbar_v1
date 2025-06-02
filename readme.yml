@@ -60,12 +60,18 @@ readme:
             ```
                   id: _my_navbar_id_
             ```
-            Item (left or right).
+            Item.
             ```
                   item:
+            ```
+            Link.
+            ```
                     -
                       text: Link 1
                       href: '#link_1'
+            ```
+            Dropdown.
+            ```
                     -
                       type: dropdown
                       text: Dropdown
@@ -85,6 +91,67 @@ readme:
                         -
                           text: Link 4
                           onclick: "alert('Link 4')"
+            ```
+            Dropdown with content.
+            ```
+                    -
+                      text: Content
+                      type: dropdown
+                      content:
+                        -
+                          type: div
+                          attribute: 
+                            class: container-fluid
+                            style:
+                              min-width: 300px
+                          innerHTML: 
+                            -
+                              type: div
+                              attribute: 
+                                class: row
+                              innerHTML: 
+                                -
+                                  type: div
+                                  attribute: 
+                                    class: col-md-6
+                                  innerHTML:
+                                    -
+                                      type: a
+                                      attribute: 
+                                        class: btn btn-primary
+                                      innerHTML: Link 1
+                                    -
+                                      type: a
+                                      attribute: 
+                                        class: btn btn-primary
+                                      innerHTML: Link 2
+                                    -
+                                      type: a
+                                      attribute: 
+                                        class: btn btn-primary
+                                      innerHTML: Link 3
+                                -
+                                  type: div
+                                  attribute: 
+                                    class: col-md-6
+                                  innerHTML:
+                                    -
+                                      type: div
+                                      innerHTML: Div 1
+                                    -
+                                      type: div
+                                      innerHTML: Div 2
+                                    -
+                                      type: div
+                                      innerHTML: Div 3
+                                -
+                                  type: div
+                                  attribute: 
+                                    class: col-md-12 text-center
+                                  innerHTML: Dropdown content
+            ```
+            Item right.
+            ```
                   item_right:
                     -
                       text: Link 5

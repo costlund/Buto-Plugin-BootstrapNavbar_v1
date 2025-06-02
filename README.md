@@ -49,12 +49,14 @@ data:
 <pre><code>    navbar:</code></pre>
 <p>Id.</p>
 <pre><code>      id: _my_navbar_id_</code></pre>
-<p>Item (left or right).</p>
-<pre><code>      item:
-        -
+<p>Item.</p>
+<pre><code>      item:</code></pre>
+<p>Link.</p>
+<pre><code>        -
           text: Link 1
-          href: '#link_1'
-        -
+          href: '#link_1'</code></pre>
+<p>Dropdown.</p>
+<pre><code>        -
           type: dropdown
           text: Dropdown
           item:
@@ -72,8 +74,65 @@ data:
               style: 'font-style:italic'
             -
               text: Link 4
-              onclick: "alert('Link 4')"
-      item_right:
+              onclick: "alert('Link 4')"</code></pre>
+<p>Dropdown with content.</p>
+<pre><code>        -
+          text: Content
+          type: dropdown
+          content:
+            -
+              type: div
+              attribute: 
+                class: container-fluid
+                style:
+                  min-width: 300px
+              innerHTML: 
+                -
+                  type: div
+                  attribute: 
+                    class: row
+                  innerHTML: 
+                    -
+                      type: div
+                      attribute: 
+                        class: col-md-6
+                      innerHTML:
+                        -
+                          type: a
+                          attribute: 
+                            class: btn btn-primary
+                          innerHTML: Link 1
+                        -
+                          type: a
+                          attribute: 
+                            class: btn btn-primary
+                          innerHTML: Link 2
+                        -
+                          type: a
+                          attribute: 
+                            class: btn btn-primary
+                          innerHTML: Link 3
+                    -
+                      type: div
+                      attribute: 
+                        class: col-md-6
+                      innerHTML:
+                        -
+                          type: div
+                          innerHTML: Div 1
+                        -
+                          type: div
+                          innerHTML: Div 2
+                        -
+                          type: div
+                          innerHTML: Div 3
+                    -
+                      type: div
+                      attribute: 
+                        class: col-md-12 text-center
+                      innerHTML: Dropdown content</code></pre>
+<p>Item right.</p>
+<pre><code>      item_right:
         -
           text: Link 5
           href: '#link_5'</code></pre>
