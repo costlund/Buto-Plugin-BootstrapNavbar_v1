@@ -89,6 +89,7 @@ innerHTML:
       $( document ).ready(function() {
         $('#[id]').on('show.bs.collapse' ,function () { 
           plugin_bootstrap_navbar_v1_handle_fixed(this);
+          window.scrollTo({ top:0, left:0, behavior: "instant"})
         });
         $('#[id]').on('hide.bs.collapse' ,function () { 
           plugin_bootstrap_navbar_v1_handle_fixed(this);

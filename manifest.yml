@@ -1,5 +1,9 @@
-version: 1.21.7
+version: 1.21.8
 history:
+  1.21.8:
+    date: '2025-06-02'
+    title: Scroll to top
+    description: 'When menu is shown always scroll to top on mobile devices.'
   1.21.7:
     date: '2025-06-02'
     title: Fixed top
