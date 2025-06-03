@@ -1,5 +1,9 @@
-version: 1.22.0
+version: 1.22.1
 history:
+  1.22.1:
+    date: '2025-06-03'
+    title: Scroll
+    description: 'If not mobile mode, dropdown toggled, visibility show, scroll to top.'
   1.22.0:
     date: '2025-06-02'
     title: Dropdown content

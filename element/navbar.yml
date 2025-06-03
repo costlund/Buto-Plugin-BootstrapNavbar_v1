@@ -88,22 +88,25 @@ innerHTML:
     innerHTML: |
       $( document ).ready(function() {
         $('#[id]').on('show.bs.collapse' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse');
-          window.scrollTo({ top:0, left:0, behavior: "instant"})
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse', 'show');
         });
         $('#[id]').on('hide.bs.collapse' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse');
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'collapse', 'hide');
         });
         $('#[id]').on('show.bs.dropdown', function () {
-          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown');
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown', 'show');
         })
         $('#[id]').on('hide.bs.dropdown' ,function () { 
-          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown');
+          plugin_bootstrap_navbar_v1_handle_fixed(this, 'dropdown', 'hide');
         });
       });
-      function plugin_bootstrap_navbar_v1_handle_fixed(e, type_of_event){
+      function plugin_bootstrap_navbar_v1_handle_fixed(e, type_of_event, visibility){
         var div = $(e).parent().get(0);
         var nav = $(div).parent().get(0);
+        /**
+         * icon
+         * If this is visible we are in mobile mode.
+         */
         var icon = $(".navbar-toggler-icon").get(0);
         /**
          *
@@ -112,7 +115,7 @@ innerHTML:
           return null;
         }
         /**
-         *
+         * fixed-top
          */
         if($(nav).hasClass('fixed-top')){
           $(nav).addClass('_fixed-top');
@@ -120,6 +123,15 @@ innerHTML:
         }else if($(nav).hasClass('_fixed-top')){
           $(nav).addClass('fixed-top');
           $(nav).removeClass('_fixed-top');
+        }
+        /**
+         * scroll
+         */
+        if(type_of_event=='collapse' && visibility=='show'){
+          window.scrollTo({ top:0, left:0, behavior: "instant"})
+        }
+        if(!$(icon).is(':visible') && type_of_event=='dropdown' && visibility=='show'){
+          window.scrollTo({ top:0, left:0, behavior: "instant"})
         }
         /**
          *
