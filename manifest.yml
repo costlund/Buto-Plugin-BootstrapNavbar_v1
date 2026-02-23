@@ -1,5 +1,9 @@
-version: 1.22.1
+version: 1.23.0
 history:
+  1.23.0:
+    date: '2026-02-23'
+    title: Attributes
+    description: 'Sets all attributes in link.'
   1.22.1:
     date: '2025-06-03'
     title: Scroll

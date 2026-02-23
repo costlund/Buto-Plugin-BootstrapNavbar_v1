@@ -257,6 +257,19 @@ class PluginBootstrapNavbar_v1{
       $link->set('attribute/target', $data->get('target'));
     }
     /**
+     * Set attributes.
+     * Skip class.
+     */
+
+    if($data->get('attribute')){
+      foreach($data->get('attribute') as $k => $v){
+        if($k=='class'){
+          continue;
+        }
+        $link->set("attribute/$k", $v);
+      }
+    }
+    /**
      * 
      */
     $link->setByTag($data->get(), 'rs', true);
