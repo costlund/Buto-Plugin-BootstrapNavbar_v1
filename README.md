@@ -10,9 +10,13 @@
 
 
 
+
+
 <a name="key_0_0"></a>
 
 ### widget_navbar
+
+
 
 <pre><code>type: widget
 data:
@@ -186,6 +190,8 @@ Using from plugin icons/bootstrap_v1_8_1 or image src.</p>
 
 #### Item link method (example)
 
+
+
 <pre><code>public function nav_item_my_account($data){
   $data = new PluginWfArray($data);
   $element = new PluginWfYml(__DIR__.'/element/nav_item_my_account.yml');
@@ -199,9 +205,13 @@ Using from plugin icons/bootstrap_v1_8_1 or image src.</p>
 
 
 
+
+
 <a name="key_1_0"></a>
 
 ### getNavbar
+
+
 
 
 
@@ -211,15 +221,21 @@ Using from plugin icons/bootstrap_v1_8_1 or image src.</p>
 
 
 
+
+
 <a name="key_1_2"></a>
 
 ### settings_set
 
 
 
+
+
 <a name="key_1_3"></a>
 
 ### getLink
+
+
 
 
 
